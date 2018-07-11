@@ -2,9 +2,8 @@ import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamSource;
 import java.io.InputStream;
 import java.net.URISyntaxException;
-import java.util.UUID;
 
-import static com.sun.org.apache.xerces.internal.utils.SecuritySupport.getResourceAsStream;
+
 
 public class ResourceSW {
     private InputStream _cadenaOriginal;
