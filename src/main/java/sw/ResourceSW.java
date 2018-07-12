@@ -1,3 +1,5 @@
+package sw;
+
 import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamSource;
 import java.io.InputStream;
@@ -24,13 +26,14 @@ public class ResourceSW {
 
     public Source CfdiXSDSource() {
         StreamSource c1 = new StreamSource(this._cfdiXSD);
-        c1.setSystemId("001");
+        c1.setSystemId(_systemId_cfdiXSD);
         return c1;
     }
 
     public ResourceSW() {
         try {
             this._systemId_cadenaOriginal = getClass().getResource("/cadenaoriginal_3_3.xslt").toURI().toString();
+            this._systemId_cfdiXSD = getClass().getResource("/cfdv33.xsd").toURI().toString();
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }
