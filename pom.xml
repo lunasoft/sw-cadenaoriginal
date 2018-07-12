@@ -6,7 +6,7 @@
 
     <groupId>mx.com.sw.services</groupId>
     <artifactId>sw-resources-java</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <packaging>jar</packaging>
 
     <scm>
@@ -160,6 +160,7 @@
             <artifactId>org.apache.servicemix.bundles.not-yet-commons-ssl</artifactId>
             <version>0.3.11_1</version>
         </dependency>
+
 
     </dependencies>
 
