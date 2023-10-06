@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
+import org.junit.Ignore;
 
 public class CadenaOriginalCfdiTest extends TestCase {
 
@@ -34,8 +35,16 @@ public class CadenaOriginalCfdiTest extends TestCase {
     public void testGenerateCadena32()
             throws URISyntaxException, TransformerException, IOException, SAXException, ParserConfigurationException {
         byte[] xmlBytes = Files.readAllBytes(new File("src/test/resources/cfdi32_01.xml").toPath());
-        String cadenaOriginal = CadenaOriginalCfdi.getCadenaOriginal(xmlBytes);
-        String expected = "||3.2|2017-11-07T23:35:52|ingreso|Pago en una sola exhibiciÃ³n|1333.00|1.0000|MXN|1546.28|NA|ZAPOPAN, JALISCO|No Identificado|IIA040805DZ4|MI SUPER CUENTA DE DESSARROLLO|AV WASHINGTON|4921|12345|JARDINES VALLARTA|ZAPOPAN|ZAPOPAN|JALISCO|MÃ‰XICO|45110|GENERAL DE LEY PERSONAS MORALES|GENERAL DE LEY PERSONAS MORALES DOBLE REGIMEN|CACX7605101P8|PUBLICO GENERAL|CALLE|1|GUADALAJARA|GUADALAJARA|GUADALAJARA|JALISCO|MEX|45100|1|No Aplica|UT421511|123|1333|1333.000000|IVA|16|213.28||";
+        String cadenaOriginal = CadenaOriginalCfdi.getCadenaOriginal(xmlBytes,"3.2");
+        String expected = "||3.2|2017-11-07T23:35:52|ingreso|Pago en una sola exhibición|1333.00|1.0000|MXN|1546.28|NA|ZAPOPAN, JALISCO|No Identificado|IIA040805DZ4|MI SUPER CUENTA DE DESSARROLLO|AV WASHINGTON|4921|12345|JARDINES VALLARTA|ZAPOPAN|ZAPOPAN|JALISCO|MÉXICO|45110|GENERAL DE LEY PERSONAS MORALES|GENERAL DE LEY PERSONAS MORALES DOBLE REGIMEN|CACX7605101P8|PUBLICO GENERAL|CALLE|1|GUADALAJARA|GUADALAJARA|GUADALAJARA|JALISCO|MEX|45100|1|No Aplica|UT421511|123|1333|1333.000000|IVA|16|213.28||";
+        Assert.assertEquals(cadenaOriginal, expected);
+    }
+    
+    public void testGenerateCadena40CCP30()
+            throws URISyntaxException, TransformerException, IOException, SAXException, ParserConfigurationException {
+        byte[] xmlBytes = Files.readAllBytes(new File("src/test/resources/cfdi40_ccp30.xml").toPath());
+        String cadenaOriginal = CadenaOriginalCfdi.getCadenaOriginal(xmlBytes,"4.0");
+        String expected = "||4.0|Serie|Folio|2023-10-02T11:30:55|01|30001000000500003416|100.00|MXN|100.00|I|01|PUE|20000|EKU9003173C9|ESCUELA KEMPER URGATE|601|URE180429TM6|UNIVERSIDAD ROBOTICA ESPAÑOLA|86991|601|G01|78101800|UT421511|1|H87|Pieza|Transporte de carga por carretera|100.00|100.00|01|3.0|CCC98765-FEDC-5678-4321-ABCDEF098765|No|5|Origen|OR123456|URE180429TM6|2023-10-02T18:00:00|2109|05|057|OAX|MEX|70300|Destino|DE123456|URE180429TM6|2023-10-02T19:00:00|5|2109|05|057|OAX|MEX|70300|1|KGM|1|10101500|Mercancia|1.00|18|01|Medicamento|Medicamento|SW Sapien|2024-01-23|123456|01|03|123456789|1.00|1|OR123456|DE123456|TPAF01|12345|C2|100|ABC123|2023|SW Sapien|12345|01|123456789|Nombre Apellido||";
         Assert.assertEquals(cadenaOriginal, expected);
     }
 }
