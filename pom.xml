@@ -39,6 +39,17 @@
                 <picUrl>https://media.licdn.com/media/AAEAAQAAAAAAAAYGAAAAJDY3NWU0NTkxLWMxOTctNGQ2NC1hMWYwLWQ4NzM4ZjI1OTE5ZQ.jpg</picUrl>
             </properties>
         </developer>
+        <developer>
+            <id>martinfnsw</id>
+            <name>Martin Flores</name>
+            <email>martin.flores@sw.com.mx</email>
+            <url>https://github.com/martinfnsw</url>
+            <organization>Smarter Web</organization>
+            <organizationUrl>https://sw.com.mx/</organizationUrl>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
 
     </developers>
     <name>${project.groupId}:${project.artifactId}</name>
