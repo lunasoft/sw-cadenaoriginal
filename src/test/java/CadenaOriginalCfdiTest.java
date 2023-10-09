@@ -36,7 +36,7 @@ public class CadenaOriginalCfdiTest extends TestCase {
             throws URISyntaxException, TransformerException, IOException, SAXException, ParserConfigurationException {
         byte[] xmlBytes = Files.readAllBytes(new File("src/test/resources/cfdi32_01.xml").toPath());
         String cadenaOriginal = CadenaOriginalCfdi.getCadenaOriginal(xmlBytes,"3.2");
-        String expected = "||3.2|2017-11-07T23:35:52|ingreso|Pago en una sola exhibición|1333.00|1.0000|MXN|1546.28|NA|ZAPOPAN, JALISCO|No Identificado|IIA040805DZ4|MI SUPER CUENTA DE DESSARROLLO|AV WASHINGTON|4921|12345|JARDINES VALLARTA|ZAPOPAN|ZAPOPAN|JALISCO|MÉXICO|45110|GENERAL DE LEY PERSONAS MORALES|GENERAL DE LEY PERSONAS MORALES DOBLE REGIMEN|CACX7605101P8|PUBLICO GENERAL|CALLE|1|GUADALAJARA|GUADALAJARA|GUADALAJARA|JALISCO|MEX|45100|1|No Aplica|UT421511|123|1333|1333.000000|IVA|16|213.28||";
+        String expected = "||3.2|2017-11-07T23:35:52|ingreso|Pago en una sola exhibicion|1333.00|1.0000|MXN|1546.28|NA|ZAPOPAN, JALISCO|No Identificado|IIA040805DZ4|MI SUPER CUENTA DE DESSARROLLO|AV WASHINGTON|4921|12345|JARDINES VALLARTA|ZAPOPAN|ZAPOPAN|JALISCO|MEXICO|45110|GENERAL DE LEY PERSONAS MORALES|GENERAL DE LEY PERSONAS MORALES DOBLE REGIMEN|CACX7605101P8|PUBLICO GENERAL|CALLE|1|GUADALAJARA|GUADALAJARA|GUADALAJARA|JALISCO|MEX|45100|1|No Aplica|UT421511|123|1333|1333.000000|IVA|16|213.28||";
         Assert.assertEquals(cadenaOriginal, expected);
     }
     
@@ -44,7 +44,7 @@ public class CadenaOriginalCfdiTest extends TestCase {
             throws URISyntaxException, TransformerException, IOException, SAXException, ParserConfigurationException {
         byte[] xmlBytes = Files.readAllBytes(new File("src/test/resources/cfdi40_ccp30.xml").toPath());
         String cadenaOriginal = CadenaOriginalCfdi.getCadenaOriginal(xmlBytes,"4.0");
-        String expected = "||4.0|Serie|Folio|2023-10-02T11:30:55|01|30001000000500003416|100.00|MXN|100.00|I|01|PUE|20000|EKU9003173C9|ESCUELA KEMPER URGATE|601|URE180429TM6|UNIVERSIDAD ROBOTICA ESPAÑOLA|86991|601|G01|78101800|UT421511|1|H87|Pieza|Transporte de carga por carretera|100.00|100.00|01|3.0|CCC98765-FEDC-5678-4321-ABCDEF098765|No|5|Origen|OR123456|URE180429TM6|2023-10-02T18:00:00|2109|05|057|OAX|MEX|70300|Destino|DE123456|URE180429TM6|2023-10-02T19:00:00|5|2109|05|057|OAX|MEX|70300|1|KGM|1|10101500|Mercancia|1.00|18|01|Medicamento|Medicamento|SW Sapien|2024-01-23|123456|01|03|123456789|1.00|1|OR123456|DE123456|TPAF01|12345|C2|100|ABC123|2023|SW Sapien|12345|01|123456789|Nombre Apellido||";
+        String expected = "||4.0|Serie|Folio|2023-10-08T00:00:55|01|30001000000500003416|100.00|MXN|100.00|I|01|PUE|42501|EKU9003173C9|ESCUELA KEMPER URGATE|601|EKU9003173C9|ESCUELA KEMPER URGATE|42501|601|S01|78101800|UT421511|1|H87|Pieza|Transporte de carga por carretera|100.00|100.00|01|3.0|CCCBCD94-870A-4332-A52A-A52AA52AA52A|No|1|Si|01|01|Origen|OR101010|EKU9003173C9|NombreRemitenteDestinatario1|2023-08-01T00:00:00|Calle1|211|212|1957|13|casa blanca|011|CMX|MEX|13250|Destino|DE202020|EKU9003173C9|NombreRemitenteDestinatario2|2023-08-01T00:00:01|1|Calle2|214|215|0347|23|casa negra|004|COA|MEX|25350|1.0|XBX|1|1|Si|11121900|Accesorios de equipo de telefonia|1.0|XBX|No|01|DenominacionGenericaProd1|DenominacionDistintivaProd1|Fabricante1|2028-01-01|LoteMedic1|01|01|RegistroSanita1|1|1|OR101010|DE202020|TPAF01|NumPermisoSCT1|VL|1|plac892|2020|AseguraRespCivil|123456789|CTR004|VL45K98|01|VAAM130719H60|a234567890|NombreFigura||";
         Assert.assertEquals(cadenaOriginal, expected);
     }
 }
