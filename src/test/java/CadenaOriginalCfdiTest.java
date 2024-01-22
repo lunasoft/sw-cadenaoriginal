@@ -47,4 +47,11 @@ public class CadenaOriginalCfdiTest extends TestCase {
         String expected = "||4.0|Serie|Folio|2023-10-08T00:00:55|01|30001000000500003416|100.00|MXN|100.00|I|01|PUE|42501|EKU9003173C9|ESCUELA KEMPER URGATE|601|EKU9003173C9|ESCUELA KEMPER URGATE|42501|601|S01|78101800|UT421511|1|H87|Pieza|Transporte de carga por carretera|100.00|100.00|01|3.0|CCCBCD94-870A-4332-A52A-A52AA52AA52A|No|1|Si|01|01|Origen|OR101010|EKU9003173C9|NombreRemitenteDestinatario1|2023-08-01T00:00:00|Calle1|211|212|1957|13|casa blanca|011|CMX|MEX|13250|Destino|DE202020|EKU9003173C9|NombreRemitenteDestinatario2|2023-08-01T00:00:01|1|Calle2|214|215|0347|23|casa negra|004|COA|MEX|25350|1.0|XBX|1|1|Si|11121900|Accesorios de equipo de telefonia|1.0|XBX|No|01|DenominacionGenericaProd1|DenominacionDistintivaProd1|Fabricante1|2028-01-01|LoteMedic1|01|01|RegistroSanita1|1|1|OR101010|DE202020|TPAF01|NumPermisoSCT1|VL|1|plac892|2020|AseguraRespCivil|123456789|CTR004|VL45K98|01|VAAM130719H60|a234567890|NombreFigura||";
         Assert.assertEquals(cadenaOriginal, expected);
     }
+    public void testGenerateCadena40CCE20()
+            throws URISyntaxException, TransformerException, IOException, SAXException, ParserConfigurationException {
+        byte[] xmlBytes = Files.readAllBytes(new File("src/test/resources/cfdi40_cce20.xml").toPath());
+        String cadenaOriginal = CadenaOriginalCfdi.getCadenaOriginal(xmlBytes,"4.0");
+        String expected = "||4.0|Serie|Folio1|2024-01-18T00:00:00|99|30001000000500003416|CondicionesDePago|400|AMD|1|400.00|I|02|PPD|20000|EKU9003173C9|ESCUELA KEMPER URGATE|601|XEXX010101000|ESCUELA KEMPER URGATE|20000|616|S01|50211503|131494-1055|2|H87|Pieza|Cigarros|200.00|400.00|01|2.0|A1|0|FOB|17.1598|25.56|CALLE DEL PAPEL|0214|01|014|QUE|MEX|76199|123456789|ST. A|TX|USA|00000|131494-1055|2402200100|117.64|01|12.78|25.56||";
+        Assert.assertEquals(cadenaOriginal, expected);
+    }
 }
