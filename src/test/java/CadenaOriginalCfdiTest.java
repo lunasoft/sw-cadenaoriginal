@@ -54,4 +54,11 @@ public class CadenaOriginalCfdiTest extends TestCase {
         String expected = "||4.0|Serie|Folio1|2024-01-18T00:00:00|99|30001000000500003416|CondicionesDePago|400|AMD|1|400.00|I|02|PPD|20000|EKU9003173C9|ESCUELA KEMPER URGATE|601|XEXX010101000|ESCUELA KEMPER URGATE|20000|616|S01|50211503|131494-1055|2|H87|Pieza|Cigarros|200.00|400.00|01|2.0|A1|0|FOB|17.1598|25.56|CALLE DEL PAPEL|0214|01|014|QUE|MEX|76199|123456789|ST. A|TX|USA|00000|131494-1055|2402200100|117.64|01|12.78|25.56||";
         Assert.assertEquals(cadenaOriginal, expected);
     }
+    public void testGenerateCadena40CCP31()
+            throws URISyntaxException, TransformerException, IOException, SAXException, ParserConfigurationException {
+        byte[] xmlBytes = Files.readAllBytes(new File("src/test/resources/cfdi40_ccp31.xml").toPath());
+        String cadenaOriginal = CadenaOriginalCfdi.getCadenaOriginal(xmlBytes,"4.0");
+        String expected = "||4.0|SerieCCP31|CP3.1|2024-06-24T00:00:55|01|30001000000500003416|100.00|MXN|100.00|I|01|PUE|42501|EKU9003173C9|ESCUELA KEMPER URGATE|601|URE180429TM6|UNIVERSIDAD ROBOTICA ESPAÑOLA|86991|601|S01|78101800|UT421511|1|H87|Pieza|Transporte de carga por carretera|100.00|100.00|01|3.1|CCCBCD94-870A-4332-A52A-A52AA52AA52A|No|1|Sí|01|01|Origen|OR101010|URE180429TM6|NombreRemitenteDestinatario1|2023-08-01T00:00:00|Calle1|211|212|1957|13|casa blanca|011|CMX|MEX|13250|Destino|DE202020|URE180429TM6|NombreRemitenteDestinatario2|2023-08-01T00:00:01|1|Calle2|214|215|0347|23|casa negra|004|COA|MEX|25350|1.0|XBX|1|Sí|11121900|Accesorios de equipo de telefonía|1.0|XBX|No|DenominacionGenericaProd1|DenominacionDistintivaProd1|Fabricante1|2003-04-02|LoteMedic1|01|01|RegistroSanita1|1|6309000100|1|OR101010|DE202020|TPAF01|NumPermisoSCT1|VL|1|plac892|2020|AseguraRespCivil|123456789|CTR004|VL45K98|01|URE180429TM6|NumLicencia1|NombreFigura1|Calle1|NumeroExterior1|NumeroInterior1|Colonia1|Localidad1|Referencia1|Municipio1|Estado1|AFG|CodigoPosta1||";
+        Assert.assertEquals(cadenaOriginal, expected);
+    }
 }
