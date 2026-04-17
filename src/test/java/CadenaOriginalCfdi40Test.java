@@ -18,4 +18,13 @@ public class CadenaOriginalCfdi40Test extends TestCase {
         Assert.assertEquals(cadenaOriginal, expected);
 
     }
+    public void testGenerateCadenaHYP() throws URISyntaxException, TransformerException {
+
+            CadenaOriginalCfdi40 cadenaOriginal40 = new CadenaOriginalCfdi40();
+            Source xml = new StreamSource(new File("src/test/resources/cfdi40_hyp.xml"));
+            String cadenaOriginal = cadenaOriginal40.getCadenaOriginal(xml);
+            String expected = "||4.0|HYP|1001|2026-04-14T17:10:01|03|30001000000500003416|50000.00|MXN|58000.00|I|01|PUE|06600|EKU9003173C9|ESCUELA KEMPER URGATE|601|URE180429TM6|UNIVERSIDAD ROBOTICA ESPAÑOLA|86991|601|G01|15101514|COMB-001|5000|LTR|Litro|Gasolina regular|10.00|50000.00|02|50000.00|002|Tasa|0.160000|8000.00|1.0|PER03|PL/364/DIS/OM/2015|15101514|SP16|50000.00|002|Tasa|0.160000|8000.00|8000.00||";
+            Assert.assertEquals(cadenaOriginal, expected);
+
+    }
 }
