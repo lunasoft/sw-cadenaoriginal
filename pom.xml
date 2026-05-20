@@ -5,7 +5,7 @@
 
     <groupId>mx.com.sw.services</groupId>
     <artifactId>sw-resources-java</artifactId>
-    <version>0.5.1</version>
+    <version>0.5.2</version>
     <packaging>jar</packaging>
     <properties>
         <java.version>1.8</java.version>
@@ -19,12 +19,12 @@
         <developerConnection>scm:git:git@github.com:lunasoft/sw-cadenaoriginal.git</developerConnection>
 
     </scm>
-    <licenses>
-        <license>
-            <name>GNU General Public License (GPL)</name>
-            <url>http://www.gnu.org/licenses/gpl.txt</url>
-        </license>
-    </licenses>
+      <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>https://opensource.org/licenses/MIT</url>
+    </license>
+  </licenses>
     <developers>
         <developer>
             <id>RichBarusta</id>
